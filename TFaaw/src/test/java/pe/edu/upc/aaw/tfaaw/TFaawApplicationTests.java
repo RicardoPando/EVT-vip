@@ -1,13 +1,13 @@
-package pe.esu.upc.aaw.trabajoarqui;
+package pe.edu.upc.aaw.tfaaw;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TrabajoArquiApplicationTests {
+class TFaawApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
