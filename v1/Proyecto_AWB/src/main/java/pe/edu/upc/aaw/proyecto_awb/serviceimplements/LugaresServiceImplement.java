@@ -15,11 +15,21 @@ public class LugaresServiceImplement implements ILugaresService {
 
     @Override
     public void insertar(Lugares s) {
-
+         lR.save(s);
     }
 
     @Override
     public List<Lugares> list() {
-        return null;
+        return lR.findAll();
+    }
+
+    @Override
+    public void delete(int id) {
+        lR.deleteById(id);
+    }
+
+    @Override
+    public Lugares listID(int id) {
+        return lR.findById(id).orElse(new Lugares());
     }
 }
