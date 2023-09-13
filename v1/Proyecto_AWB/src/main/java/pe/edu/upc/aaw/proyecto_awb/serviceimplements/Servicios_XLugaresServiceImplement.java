@@ -14,11 +14,21 @@ public class Servicios_XLugaresServiceImplement implements IServicios_XLugaresSe
 
     @Override
     public void insertar(Servicios_XLugares s) {
-
+        slR.save(s);
     }
 
     @Override
     public List<Servicios_XLugares> list() {
-        return null;
+        return slR.findAll();
+    }
+
+    @Override
+    public void delete(int id) {
+        slR.deleteById(id);
+    }
+
+    @Override
+    public Servicios_XLugares listID(int id) {
+        return slR.findById(id).orElse(new Servicios_XLugares());
     }
 }
