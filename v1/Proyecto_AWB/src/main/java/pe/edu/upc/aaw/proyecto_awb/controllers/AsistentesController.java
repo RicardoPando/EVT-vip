@@ -20,7 +20,7 @@ public class AsistentesController {
     public void registrar (@RequestBody AsistentesDTO dto){
         ModelMapper m = new ModelMapper();
         Asistentes n = m.map(dto,Asistentes.class);
-        asS.insert(n);
+        asS.insertar(n);
     }
 
     @GetMapping
@@ -41,6 +41,6 @@ public class AsistentesController {
     {
         ModelMapper m = new ModelMapper();
         Asistentes n = m.map(dto,Asistentes.class);
-        asS.insert(n);
+        asS.insertar(n);
     }
 }

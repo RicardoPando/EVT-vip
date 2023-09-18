@@ -20,7 +20,7 @@ public class Documento_VentaController {
     public void registrar (@RequestBody Documento_VentaDTO dto){
         ModelMapper m = new ModelMapper();
         Documento_Venta n = m.map(dto,Documento_Venta.class);
-        dvS.insert(n);
+        dvS.insertar(n);
     }
 
     @GetMapping
@@ -41,6 +41,6 @@ public class Documento_VentaController {
     {
         ModelMapper m = new ModelMapper();
         Documento_Venta n = m.map(dto,Documento_Venta.class);
-        dvS.insert(n);
+        dvS.insertar(n);
     }
 }
