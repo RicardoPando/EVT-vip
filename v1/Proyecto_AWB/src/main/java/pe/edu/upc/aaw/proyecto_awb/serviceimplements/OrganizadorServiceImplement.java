@@ -14,12 +14,22 @@ public class OrganizadorServiceImplement implements IOrganizadorService {
     private IOrganizadorRepository oR;
 
     @Override
-    public void insertar(Organizador s) {
+    public void insert(Organizador s) {
 
     }
 
     @Override
     public List<Organizador> list() {
+        return null;
+    }
+
+    @Override
+    public void delete(int id) {
+
+    }
+
+    @Override
+    public Organizador ListId(int id) {
         return null;
     }
 }

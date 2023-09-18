@@ -12,14 +12,23 @@ import java.util.List;
 public class EventosServiceImplement implements IEventosService {
     @Autowired
     private IEventosRepository eR;
-
     @Override
-    public void insertar(Eventos s) {
+    public void insertar(Eventos eventos) {
 
     }
 
     @Override
     public List<Eventos> list() {
+        return null;
+    }
+
+    @Override
+    public void delete(int id) {
+
+    }
+
+    @Override
+    public Eventos ListId(int id) {
         return null;
     }
 }
