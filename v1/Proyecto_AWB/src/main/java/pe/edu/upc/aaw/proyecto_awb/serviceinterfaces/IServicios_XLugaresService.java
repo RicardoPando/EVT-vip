@@ -7,6 +7,4 @@ import java.util.List;
 public interface IServicios_XLugaresService {
     public void insertar(Servicios_XLugares s);
     List<Servicios_XLugares> list();
-    public void delete(int id);
-    public Servicios_XLugares listID(int id);
 }
