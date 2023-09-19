@@ -1,6 +1,6 @@
-package pe.edu.upc.aww.comentario.serviceinterfaces;
+package pe.edu.upc.aaw.proyecto_awb.serviceinterfaces;
 
-import pe.edu.upc.aww.comentario.entities.Comentario;
+import pe.edu.upc.aaw.proyecto_awb.entities.Comentario;
 
 import java.util.List;
 

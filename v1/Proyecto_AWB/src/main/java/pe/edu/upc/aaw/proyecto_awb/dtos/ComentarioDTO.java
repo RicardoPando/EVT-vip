@@ -1,4 +1,4 @@
-package pe.edu.upc.aww.comentario.dtos;
+package pe.edu.upc.aaw.proyecto_awb.dtos;
 
 public class ComentarioDTO {
 

@@ -1,11 +1,11 @@
-package pe.edu.upc.aww.comentario.controllers;
+package pe.edu.upc.aaw.proyecto_awb.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aww.comentario.dtos.ComentarioDTO;
-import pe.edu.upc.aww.comentario.entities.Comentario;
-import pe.edu.upc.aww.comentario.serviceinterfaces.IComentarioService;
+import pe.edu.upc.aaw.proyecto_awb.dtos.ComentarioDTO;
+import pe.edu.upc.aaw.proyecto_awb.entities.Comentario;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComentarioService;
 
 @RestController
 @RequestMapping("/comentarios")

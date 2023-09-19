@@ -1,10 +1,10 @@
-package pe.edu.upc.aww.comentario.serviceimplements;
+package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aww.comentario.entities.Comentario;
-import pe.edu.upc.aww.comentario.repositories.IComentarioRepository;
-import pe.edu.upc.aww.comentario.serviceinterfaces.IComentarioService;
+import pe.edu.upc.aaw.proyecto_awb.entities.Comentario;
+import pe.edu.upc.aaw.proyecto_awb.repositories.IComentarioRepository;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComentarioService;
 
 import java.util.List;
 

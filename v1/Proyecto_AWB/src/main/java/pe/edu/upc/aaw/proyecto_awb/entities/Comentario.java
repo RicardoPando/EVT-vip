@@ -1,4 +1,4 @@
-package pe.edu.upc.aww.comentario.entities;
+package pe.edu.upc.aaw.proyecto_awb.entities;
 
 import javax.persistence.*;
 
