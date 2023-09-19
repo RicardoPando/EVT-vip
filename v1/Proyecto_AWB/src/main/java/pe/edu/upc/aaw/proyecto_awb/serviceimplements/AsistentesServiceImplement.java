@@ -17,9 +17,13 @@ public class AsistentesServiceImplement implements IAsistentesService {
     public void insertar(Asistentes s) {
 
     }
-
     @Override
     public List<Asistentes> list() {
         return null;
     }
+
+    public void delete(int id) {
+        aR.deleteById(id);
+    }
+
 }
