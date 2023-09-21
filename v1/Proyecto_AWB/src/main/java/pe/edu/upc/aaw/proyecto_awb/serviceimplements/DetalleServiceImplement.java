@@ -12,12 +12,20 @@ public class DetalleServiceImplement implements IDetalleService {
     private IDetalleRepository dR;
 
     @Override
-    public void insertar(Detalle s) {
-
+    public void insertar(Detalle s) {dR.save(s);
     }
 
     @Override
     public List<Detalle> list() {
-        return null;
+        return dR.findAll();
     }
+
+    @Override
+    public void delete(int id) { dR.deleteById(id);
+    }
+
+    @Override
+    public Detalle listID(int id) { return dR.findById(id).orElse(new Detalle());
+    }
+
 }

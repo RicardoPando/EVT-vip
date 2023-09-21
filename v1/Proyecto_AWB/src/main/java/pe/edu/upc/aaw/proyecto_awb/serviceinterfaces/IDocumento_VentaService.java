@@ -7,4 +7,5 @@ import java.util.List;
 public interface IDocumento_VentaService {
     public void insertar(Documento_Venta s);
     List<Documento_Venta> list();
+    public void delete(int id);
 }

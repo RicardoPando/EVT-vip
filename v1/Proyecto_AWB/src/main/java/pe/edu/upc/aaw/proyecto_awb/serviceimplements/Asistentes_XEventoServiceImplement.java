@@ -14,12 +14,19 @@ public class Asistentes_XEventoServiceImplement implements IAsisntetes_XEventoSe
     private IAsistentes_XEventoRepository aeR;
 
     @Override
-    public void insertar(Asistentes_XEvento s) {
-
+    public void insertar(Asistentes_XEvento s) { aeR.save(s);
     }
 
     @Override
-    public List<Asistentes_XEvento> list() {
-        return null;
+    public List<Asistentes_XEvento> list() { return aeR.findAll();
     }
+
+    @Override
+    public void delete(int id) { aeR.deleteById(id);
+    }
+
+    @Override
+    public Asistentes_XEvento listID(int id) { return aeR.findById(id).orElse(new Asistentes_XEvento());
+    }
+
 }

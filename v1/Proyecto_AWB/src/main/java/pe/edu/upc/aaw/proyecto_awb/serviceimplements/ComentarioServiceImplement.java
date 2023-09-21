@@ -10,16 +10,27 @@ import java.util.List;
 
 @Service
 public class ComentarioServiceImplement implements IComentarioService {
+
     @Autowired
     private IComentarioRepository cR;
 
     @Override
-    public void insertar(Comentario s) {
+    public void insert(Comentario comentario) { cR.save(comentario);
 
     }
 
     @Override
     public List<Comentario> list() {
-        return null;
+        return cR.findAll();
+    }
+
+    @Override
+    public void delete(int comentarioId) {cR.deleteById(comentarioId);
+
+    }
+
+    @Override
+    public Comentario listarId(int comentarioId) {
+        return cR.findById(comentarioId).orElse(new Comentario());
     }
 }

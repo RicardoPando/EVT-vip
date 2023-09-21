@@ -17,9 +17,13 @@ public class Documento_VentaServiceImplement implements IDocumento_VentaService 
     public void insertar(Documento_Venta s) {
 
     }
-
     @Override
     public List<Documento_Venta> list() {
         return null;
     }
+
+    public void delete(int id) {
+        dvR.deleteById(id);
+    }
+
 }

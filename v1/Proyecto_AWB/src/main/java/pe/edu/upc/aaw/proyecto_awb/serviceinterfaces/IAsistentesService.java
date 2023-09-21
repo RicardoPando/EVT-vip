@@ -8,4 +8,5 @@ import java.util.List;
 public interface IAsistentesService {
     public void insertar(Asistentes s);
     List<Asistentes> list();
+    public void delete(int id);
 }

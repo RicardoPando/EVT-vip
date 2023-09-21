@@ -7,4 +7,6 @@ import java.util.List;
 public interface ILugaresService {
     public void insertar(Lugares s);
     List<Lugares> list();
+    public void delete(int id);
+    public Lugares listID(int id);
 }
