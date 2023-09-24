@@ -3,15 +3,15 @@ package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.proyecto_awb.entities.Usuarios_XEvento;
-import pe.edu.upc.aaw.proyecto_awb.repositories.IAsistentes_XEventoRepository;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IAsisntetes_XEventoService;
+import pe.edu.upc.aaw.proyecto_awb.repositories.IUsuarios_XEventoRepository;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.Usuarios_XEventoService;
 
 import java.util.List;
 
 @Service
-public class Asistentes_XEventoServiceImplement implements IAsisntetes_XEventoService {
+public class Usuarios_XEventoServiceImplement implements Usuarios_XEventoService {
     @Autowired
-    private IAsistentes_XEventoRepository aeR;
+    private IUsuarios_XEventoRepository aeR;
 
     @Override
     public void insertar(Usuarios_XEvento s) { aeR.save(s);

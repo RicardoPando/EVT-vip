@@ -3,22 +3,22 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.proyecto_awb.dtos.Asistentes_XEventoDTO;
+import pe.edu.upc.aaw.proyecto_awb.dtos.Usuarios_XEventoDTO;
 import pe.edu.upc.aaw.proyecto_awb.entities.Usuarios_XEvento;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IAsisntetes_XEventoService;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.Usuarios_XEventoService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("asistentes_xeventos")
-public class Asistentes_XEventoController {
+@RequestMapping("usuarios_xeventocontroller")
+public class Usuarios_XEventoController {
 
     @Autowired
-    private IAsisntetes_XEventoService axE;
+    private Usuarios_XEventoService axE;
 
     @PostMapping
-    public void registrar(@RequestBody Asistentes_XEventoDTO dto)
+    public void registrar(@RequestBody Usuarios_XEventoDTO dto)
     {
         ModelMapper m= new ModelMapper();
         Usuarios_XEvento a = m.map(dto, Usuarios_XEvento.class);
@@ -26,10 +26,10 @@ public class Asistentes_XEventoController {
     }
 
     @GetMapping
-    public List<Asistentes_XEventoDTO> listar(){
+    public List<Usuarios_XEventoDTO> listar(){
         return axE.list().stream().map(x->{
             ModelMapper m =  new ModelMapper();
-            return m.map(x, Asistentes_XEventoDTO.class);
+            return m.map(x, Usuarios_XEventoDTO.class);
         }).collect(Collectors.toList());
     }
 
@@ -40,14 +40,14 @@ public class Asistentes_XEventoController {
 
 
     @GetMapping("/{id}")
-    public Asistentes_XEventoDTO listarID(@PathVariable("id")Integer id){
+    public Usuarios_XEventoDTO listarID(@PathVariable("id")Integer id){
         ModelMapper m= new ModelMapper();
-        Asistentes_XEventoDTO dto= m.map(axE.listID(id),Asistentes_XEventoDTO.class);
+        Usuarios_XEventoDTO dto= m.map(axE.listID(id), Usuarios_XEventoDTO.class);
         return dto;
     }
 
     @PutMapping
-    public void modificar(@RequestBody Asistentes_XEventoDTO dto)
+    public void modificar(@RequestBody Usuarios_XEventoDTO dto)
     {
         ModelMapper m= new ModelMapper();
         Usuarios_XEvento a = m.map(dto, Usuarios_XEvento.class);
