@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.proyecto_awb.entities.Asistentes_XEvento;
+import pe.edu.upc.aaw.proyecto_awb.entities.Usuarios_XEvento;
 import pe.edu.upc.aaw.proyecto_awb.repositories.IAsistentes_XEventoRepository;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IAsisntetes_XEventoService;
 
@@ -14,11 +14,11 @@ public class Asistentes_XEventoServiceImplement implements IAsisntetes_XEventoSe
     private IAsistentes_XEventoRepository aeR;
 
     @Override
-    public void insertar(Asistentes_XEvento s) { aeR.save(s);
+    public void insertar(Usuarios_XEvento s) { aeR.save(s);
     }
 
     @Override
-    public List<Asistentes_XEvento> list() { return aeR.findAll();
+    public List<Usuarios_XEvento> list() { return aeR.findAll();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Asistentes_XEventoServiceImplement implements IAsisntetes_XEventoSe
     }
 
     @Override
-    public Asistentes_XEvento listID(int id) { return aeR.findById(id).orElse(new Asistentes_XEvento());
+    public Usuarios_XEvento listID(int id) { return aeR.findById(id).orElse(new Usuarios_XEvento());
     }
 
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Asistentes_XEvento")
-public class Asistentes_XEvento {
+public class Usuarios_XEvento {
     @Id // PK-FK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAsisXEve;
@@ -19,10 +19,10 @@ public class Asistentes_XEvento {
     @JoinColumn(name = "eventos_id")
     private Eventos eventos;
 
-    public Asistentes_XEvento() {
+    public Usuarios_XEvento() {
     }
 
-    public Asistentes_XEvento(Asistentes asistentes, Eventos eventos) {
+    public Usuarios_XEvento(Asistentes asistentes, Eventos eventos) {
         this.asistentes = asistentes;
         this.eventos = eventos;
     }

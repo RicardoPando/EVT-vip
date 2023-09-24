@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.Asistentes_XEventoDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Asistentes_XEvento;
+import pe.edu.upc.aaw.proyecto_awb.entities.Usuarios_XEvento;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IAsisntetes_XEventoService;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class Asistentes_XEventoController {
     public void registrar(@RequestBody Asistentes_XEventoDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Asistentes_XEvento a = m.map(dto, Asistentes_XEvento.class);
+        Usuarios_XEvento a = m.map(dto, Usuarios_XEvento.class);
         axE.insertar(a);
     }
 
@@ -50,7 +50,7 @@ public class Asistentes_XEventoController {
     public void modificar(@RequestBody Asistentes_XEventoDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Asistentes_XEvento a = m.map(dto,Asistentes_XEvento.class);
+        Usuarios_XEvento a = m.map(dto, Usuarios_XEvento.class);
         axE.insertar(a);
     }
 }
