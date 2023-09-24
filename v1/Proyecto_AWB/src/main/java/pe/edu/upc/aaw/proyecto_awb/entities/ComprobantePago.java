@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "Documento_Venta")
-public class Documento_Venta {
+public class ComprobantePago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,32 +23,29 @@ public class Documento_Venta {
 
     @Column(name ="RUC", length = 10, nullable = false )
     private String RUC;
-
-    @ManyToOne
-    @JoinColumn(name = "asistentes_id")
-    private Asistentes asistentes;
+    @Column(name = "igv")
+    private BigDecimal igv;
 
     @ManyToOne
     @JoinColumn(name = "detalle_id")
     private Detalle detalle;
 
     @ManyToOne
-    @JoinColumn(name = "Tipo_Documento_id")
-    private Tipo_Documento tipo_documento;
+    @JoinColumn(name = "tipoComprobante")
+    private TipoComprobante tipoComprobante;
 
-
-    public Documento_Venta() {
+    public ComprobantePago() {
     }
 
-    public Documento_Venta(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, Asistentes asistentes, Detalle detalle, Tipo_Documento tipo_documento) {
+    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, BigDecimal igv, Detalle detalle, TipoComprobante tipoComprobante) {
         this.id = id;
         this.monto = monto;
         this.fecha = fecha;
         this.metodo = metodo;
         this.RUC = RUC;
-        this.asistentes = asistentes;
+        this.igv = igv;
         this.detalle = detalle;
-        this.tipo_documento = tipo_documento;
+        this.tipoComprobante = tipoComprobante;
     }
 
     public int getId() {
@@ -91,12 +88,12 @@ public class Documento_Venta {
         this.RUC = RUC;
     }
 
-    public Asistentes getAsistentes() {
-        return asistentes;
+    public BigDecimal getIgv() {
+        return igv;
     }
 
-    public void setAsistentes(Asistentes asistentes) {
-        this.asistentes = asistentes;
+    public void setIgv(BigDecimal igv) {
+        this.igv = igv;
     }
 
     public Detalle getDetalle() {
@@ -107,11 +104,11 @@ public class Documento_Venta {
         this.detalle = detalle;
     }
 
-    public Tipo_Documento getTipo_documento() {
-        return tipo_documento;
+    public TipoComprobante getTipoComprobante() {
+        return tipoComprobante;
     }
 
-    public void setTipo_documento(Tipo_Documento tipo_documento) {
-        this.tipo_documento = tipo_documento;
+    public void setTipoComprobante(TipoComprobante tipoComprobante) {
+        this.tipoComprobante = tipoComprobante;
     }
 }

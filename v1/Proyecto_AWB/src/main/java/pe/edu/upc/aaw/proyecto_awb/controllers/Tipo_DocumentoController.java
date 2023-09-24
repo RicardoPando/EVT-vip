@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.Tipo_DocumentoDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Tipo_Documento;
+import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.ITipo_DocumentoService;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class Tipo_DocumentoController {
     @PostMapping
     public void registrar(@RequestBody Tipo_DocumentoDTO dto){
         ModelMapper m= new ModelMapper();
-        Tipo_Documento o = m.map(dto,Tipo_Documento.class);
+        TipoComprobante o = m.map(dto, TipoComprobante.class);
         tdS.insertar(o);
     }
 
@@ -38,7 +38,7 @@ public class Tipo_DocumentoController {
     public void modificar(@RequestBody Tipo_DocumentoDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Tipo_Documento o = m.map(dto,Tipo_Documento.class);
+        TipoComprobante o = m.map(dto, TipoComprobante.class);
         tdS.insertar(o);
     }
 }

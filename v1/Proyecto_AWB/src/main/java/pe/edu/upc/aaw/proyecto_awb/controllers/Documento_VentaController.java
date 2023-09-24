@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.Documento_VentaDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Documento_Venta;
+import pe.edu.upc.aaw.proyecto_awb.entities.ComprobantePago;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDocumento_VentaService;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class Documento_VentaController {
     @PostMapping
     public void registrar (@RequestBody Documento_VentaDTO dto){
         ModelMapper m = new ModelMapper();
-        Documento_Venta n = m.map(dto,Documento_Venta.class);
+        ComprobantePago n = m.map(dto, ComprobantePago.class);
         dvS.insertar(n);
     }
 
@@ -40,7 +40,7 @@ public class Documento_VentaController {
     public void modificar(@RequestBody Documento_VentaDTO dto)
     {
         ModelMapper m = new ModelMapper();
-        Documento_Venta n = m.map(dto,Documento_Venta.class);
+        ComprobantePago n = m.map(dto, ComprobantePago.class);
         dvS.insertar(n);
     }
 }

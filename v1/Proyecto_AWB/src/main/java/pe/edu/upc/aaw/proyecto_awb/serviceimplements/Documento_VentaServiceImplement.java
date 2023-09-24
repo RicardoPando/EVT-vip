@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.proyecto_awb.entities.Documento_Venta;
+import pe.edu.upc.aaw.proyecto_awb.entities.ComprobantePago;
 import pe.edu.upc.aaw.proyecto_awb.repositories.IDocumento_VentaRepository;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDocumento_VentaService;
 
@@ -14,11 +14,11 @@ public class Documento_VentaServiceImplement implements IDocumento_VentaService 
     private IDocumento_VentaRepository dvR;
 
     @Override
-    public void insertar(Documento_Venta s) {
+    public void insertar(ComprobantePago s) {
 
     }
     @Override
-    public List<Documento_Venta> list() {
+    public List<ComprobantePago> list() {
         return null;
     }
 

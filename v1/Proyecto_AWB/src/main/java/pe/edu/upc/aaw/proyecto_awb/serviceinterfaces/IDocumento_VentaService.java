@@ -1,11 +1,11 @@
 package pe.edu.upc.aaw.proyecto_awb.serviceinterfaces;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Documento_Venta;
+import pe.edu.upc.aaw.proyecto_awb.entities.ComprobantePago;
 
 import java.util.List;
 
 public interface IDocumento_VentaService {
-    public void insertar(Documento_Venta s);
-    List<Documento_Venta> list();
+    public void insertar(ComprobantePago s);
+    List<ComprobantePago> list();
     public void delete(int id);
 }

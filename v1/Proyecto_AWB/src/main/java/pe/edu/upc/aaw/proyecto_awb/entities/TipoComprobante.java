@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Tipo_Documento")
-public class Tipo_Documento {
+public class TipoComprobante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -12,10 +12,10 @@ public class Tipo_Documento {
     @Column(name = "Descripcion", length = 250, nullable = false)
     private String Descripcion;
 
-    public Tipo_Documento() {
+    public TipoComprobante() {
     }
 
-    public Tipo_Documento(int id, String descripcion) {
+    public TipoComprobante(int id, String descripcion) {
         this.id = id;
         Descripcion = descripcion;
     }

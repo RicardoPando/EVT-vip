@@ -2,9 +2,8 @@ package pe.edu.upc.aaw.proyecto_awb.dtos;
 
 import pe.edu.upc.aaw.proyecto_awb.entities.Asistentes;
 import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
-import pe.edu.upc.aaw.proyecto_awb.entities.Tipo_Documento;
+import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -24,7 +23,7 @@ public class Documento_VentaDTO {
 
     private Detalle detalle;
 
-    private Tipo_Documento tipo_documento;
+    private TipoComprobante tipo_documento;
 
     public int getId() {
         return id;
@@ -82,11 +81,11 @@ public class Documento_VentaDTO {
         this.detalle = detalle;
     }
 
-    public Tipo_Documento getTipo_documento() {
+    public TipoComprobante getTipo_documento() {
         return tipo_documento;
     }
 
-    public void setTipo_documento(Tipo_Documento tipo_documento) {
+    public void setTipo_documento(TipoComprobante tipo_documento) {
         this.tipo_documento = tipo_documento;
     }
 }

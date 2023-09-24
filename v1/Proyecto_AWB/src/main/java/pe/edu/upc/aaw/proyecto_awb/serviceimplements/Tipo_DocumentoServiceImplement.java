@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.proyecto_awb.entities.Tipo_Documento;
+import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 import pe.edu.upc.aaw.proyecto_awb.repositories.ITipo_DocumentoRepository;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.ITipo_DocumentoService;
 
@@ -13,12 +13,12 @@ public class Tipo_DocumentoServiceImplement implements ITipo_DocumentoService {
     private ITipo_DocumentoRepository tcR;
 
     @Override
-    public void insertar(Tipo_Documento s) {
+    public void insertar(TipoComprobante s) {
         tcR.save(s);
     }
 
     @Override
-    public List<Tipo_Documento> list() {
+    public List<TipoComprobante> list() {
         return tcR.findAll();
     }
 
