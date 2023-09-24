@@ -18,7 +18,19 @@ public class Locales {
     @Column(name ="Capacidad", length = 250, nullable = false )
     private String Capacidad;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
     public Locales() {
+    }
+
+    public Locales(int id, String nombre, String direccion, String capacidad, Usuario usuario) {
+        this.id = id;
+        Nombre = nombre;
+        Direccion = direccion;
+        Capacidad = capacidad;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -51,5 +63,13 @@ public class Locales {
 
     public void setCapacidad(String capacidad) {
         Capacidad = capacidad;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

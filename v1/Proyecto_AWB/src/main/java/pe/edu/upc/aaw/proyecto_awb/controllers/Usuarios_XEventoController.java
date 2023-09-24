@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.Usuarios_XEventoDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Usuarios_XEvento;
+import pe.edu.upc.aaw.proyecto_awb.entities.Usuarios_XEventos;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.Usuarios_XEventoService;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class Usuarios_XEventoController {
     public void registrar(@RequestBody Usuarios_XEventoDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Usuarios_XEvento a = m.map(dto, Usuarios_XEvento.class);
+        Usuarios_XEventos a = m.map(dto, Usuarios_XEventos.class);
         axE.insertar(a);
     }
 
@@ -50,7 +50,7 @@ public class Usuarios_XEventoController {
     public void modificar(@RequestBody Usuarios_XEventoDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Usuarios_XEvento a = m.map(dto, Usuarios_XEvento.class);
+        Usuarios_XEventos a = m.map(dto, Usuarios_XEventos.class);
         axE.insertar(a);
     }
 }

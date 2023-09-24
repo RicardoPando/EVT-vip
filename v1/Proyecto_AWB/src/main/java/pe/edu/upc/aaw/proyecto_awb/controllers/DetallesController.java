@@ -3,32 +3,32 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.proyecto_awb.dtos.DetalleDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDetalleService;
+import pe.edu.upc.aaw.proyecto_awb.dtos.DetallesDTO;
+import pe.edu.upc.aaw.proyecto_awb.entities.Detalles;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDetallesService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/detalles")
-public class DetalleController {
+public class DetallesController {
     @Autowired
-    private IDetalleService dT;
+    private IDetallesService dT;
 
     @PostMapping
-    public void registrar(@RequestBody DetalleDTO dto)
+    public void registrar(@RequestBody DetallesDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Detalle d = m.map(dto,Detalle.class);
+        Detalles d = m.map(dto, Detalles.class);
         dT.insertar(d);
     }
 
     @GetMapping
-    public List<DetalleDTO> listar(){
+    public List<DetallesDTO> listar(){
         return dT.list().stream().map(x->{
             ModelMapper m =  new ModelMapper();
-            return m.map(x, DetalleDTO.class);
+            return m.map(x, DetallesDTO.class);
         }).collect(Collectors.toList());
     }
 
@@ -38,17 +38,17 @@ public class DetalleController {
     }
 
     @GetMapping("/{id}")
-    public DetalleDTO listarID(@PathVariable("id")Integer id){
+    public DetallesDTO listarID(@PathVariable("id")Integer id){
         ModelMapper m= new ModelMapper();
-        DetalleDTO dto= m.map(dT.listID(id),DetalleDTO.class);
+        DetallesDTO dto= m.map(dT.listID(id), DetallesDTO.class);
         return dto;
     }
 
     @PutMapping
-    public void modificar(@RequestBody DetalleDTO dto)
+    public void modificar(@RequestBody DetallesDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Detalle d = m.map(dto,Detalle.class);
+        Detalles d = m.map(dto, Detalles.class);
         dT.insertar(d);
     }
 }

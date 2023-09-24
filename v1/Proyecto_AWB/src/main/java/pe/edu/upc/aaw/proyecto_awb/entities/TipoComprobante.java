@@ -9,14 +9,18 @@ public class TipoComprobante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "Nombre", length = 45, nullable = false)
+    private String nombre;
+
     @Column(name = "Descripcion", length = 250, nullable = false)
     private String Descripcion;
 
     public TipoComprobante() {
     }
 
-    public TipoComprobante(int id, String descripcion) {
+    public TipoComprobante(int id, String nombre, String descripcion) {
         this.id = id;
+        this.nombre = nombre;
         Descripcion = descripcion;
     }
 
@@ -26,6 +30,14 @@ public class TipoComprobante {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {

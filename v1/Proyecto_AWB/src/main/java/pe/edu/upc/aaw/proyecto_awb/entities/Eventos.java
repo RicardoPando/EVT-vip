@@ -31,7 +31,7 @@ public class Eventos {
     private BigDecimal costo;
 
     @ManyToOne
-    @JoinColumn(name = "lugares_id")
+    @JoinColumn(name = "locales_id")
     private Locales locales;
 
     @ManyToOne

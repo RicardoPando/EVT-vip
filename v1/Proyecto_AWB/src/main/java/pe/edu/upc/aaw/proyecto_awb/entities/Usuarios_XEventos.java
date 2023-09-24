@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Asistentes_XEvento")
-public class Usuarios_XEvento {
+public class Usuarios_XEventos {
     @Id // PK-FK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuXEve;
@@ -20,7 +20,7 @@ public class Usuarios_XEvento {
     @Column(name = "descripcion", length=250, nullable = false)
     private String descripcion;
 
-    public Usuarios_XEvento() {
+    public Usuarios_XEventos() {
     }
 
     public int getIdUsuXEve() {

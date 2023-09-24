@@ -28,16 +28,16 @@ public class ComprobantePago {
 
     @ManyToOne
     @JoinColumn(name = "detalle_id")
-    private Detalle detalle;
+    private Detalles detalle;
 
     @ManyToOne
-    @JoinColumn(name = "tipoComprobante")
+    @JoinColumn(name = "tipoComprobante_id")
     private TipoComprobante tipoComprobante;
 
     public ComprobantePago() {
     }
 
-    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, BigDecimal igv, Detalle detalle, TipoComprobante tipoComprobante) {
+    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, BigDecimal igv, Detalles detalle, TipoComprobante tipoComprobante) {
         this.id = id;
         this.monto = monto;
         this.fecha = fecha;
@@ -96,11 +96,11 @@ public class ComprobantePago {
         this.igv = igv;
     }
 
-    public Detalle getDetalle() {
+    public Detalles getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(Detalle detalle) {
+    public void setDetalle(Detalles detalle) {
         this.detalle = detalle;
     }
 

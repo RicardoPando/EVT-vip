@@ -1,30 +1,13 @@
-package pe.edu.upc.aaw.proyecto_awb.entities;
+package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-import javax.persistence.*;
+import pe.edu.upc.aaw.proyecto_awb.entities.Eventos;
+
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "Detalle")
-public class Detalle {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DetallesDTO {
     private int id;
-
-    @ManyToOne
-    @JoinColumn(name = "eventos_id")
     private Eventos eventos;
-
-    @Column(name = "subTotal")
     private BigDecimal subTotal;
-
-    public Detalle() {
-    }
-
-    public Detalle(int id, Eventos eventos, BigDecimal subTotal) {
-        this.id = id;
-        this.eventos = eventos;
-        this.subTotal = subTotal;
-    }
 
     public int getId() {
         return id;

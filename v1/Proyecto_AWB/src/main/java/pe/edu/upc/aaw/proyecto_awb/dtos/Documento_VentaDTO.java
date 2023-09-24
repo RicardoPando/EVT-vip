@@ -1,7 +1,7 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
 import pe.edu.upc.aaw.proyecto_awb.entities.Asistentes;
-import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
+import pe.edu.upc.aaw.proyecto_awb.entities.Detalles;
 import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 
 import java.math.BigDecimal;
@@ -21,7 +21,7 @@ public class Documento_VentaDTO {
 
     private Asistentes asistentes;
 
-    private Detalle detalle;
+    private Detalles detalle;
 
     private TipoComprobante tipo_documento;
 
@@ -73,11 +73,11 @@ public class Documento_VentaDTO {
         this.asistentes = asistentes;
     }
 
-    public Detalle getDetalle() {
+    public Detalles getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(Detalle detalle) {
+    public void setDetalle(Detalles detalle) {
         this.detalle = detalle;
     }
 
