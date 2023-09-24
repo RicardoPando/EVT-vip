@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.proyecto_awb.entities.Usuario;
+import pe.edu.upc.aaw.proyecto_awb.entities.Users;
 import pe.edu.upc.aaw.proyecto_awb.repositories.IUserRepository;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IUserService;
 
@@ -14,12 +14,12 @@ public class UserServiceImplement implements IUserService {
     private IUserRepository uR;
 
     @Override
-    public void insert(Usuario usuario) {
-        uR.save(usuario);
+    public void insert(Users users) {
+        uR.save(users);
     }
 
     @Override
-    public List<Usuario> list() {
+    public List<Users> list() {
         return uR.findAll();
     }
 
@@ -29,7 +29,7 @@ public class UserServiceImplement implements IUserService {
     }
 
     @Override
-    public Usuario listID(int id) {
-        return uR.findById(id).orElse(new Usuario());
+    public Users listID(int id) {
+        return uR.findById(id).orElse(new Users());
     }
 }

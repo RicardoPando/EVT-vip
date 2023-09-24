@@ -1,12 +1,13 @@
 package pe.edu.upc.aaw.proyecto_awb.serviceinterfaces;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Usuario;
+import pe.edu.upc.aaw.proyecto_awb.entities.Users;
+
 
 import java.util.List;
 
 public interface IUserService {
-    public void insert(Usuario usuario);
-    public List<Usuario> list();
+    public void insert(Users usuario);
+    public List<Users> list();
     public void delete (int id);
-    public Usuario listID(int id);
+    public Users listID(int id);
 }

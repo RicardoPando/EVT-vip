@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.UsuarioDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Usuario;
+import pe.edu.upc.aaw.proyecto_awb.entities.Users;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IUserService;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class UsuarioController {
     @PostMapping
     public void registrar(@RequestBody UsuarioDTO dto){
         ModelMapper m= new ModelMapper();
-        Usuario u = m.map(dto,Usuario.class);
+        Users u = m.map(dto,Users.class);
         uS.insert(u);
     }
 
@@ -48,7 +48,7 @@ public class UsuarioController {
     @PutMapping
     public void Modificar (@RequestBody UsuarioDTO dto){
         ModelMapper m= new ModelMapper();
-        Usuario u = m.map(dto,Usuario.class);
+        Users u = m.map(dto,Users.class);
         uS.insert(u);
     }
 }

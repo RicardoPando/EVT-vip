@@ -4,6 +4,8 @@ public class TipoComprobanteDTO {
     private int id;
     private String Descripcion;
 
+    private String Nombre;
+
     public int getId() {
         return id;
     }
@@ -18,5 +20,13 @@ public class TipoComprobanteDTO {
 
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
     }
 }

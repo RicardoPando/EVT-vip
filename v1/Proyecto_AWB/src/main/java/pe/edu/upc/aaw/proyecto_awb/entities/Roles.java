@@ -1,10 +1,11 @@
 package pe.edu.upc.aaw.proyecto_awb.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "roles", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id", "rol" }) })
-public class Roles {
+public class Roles implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRoles;
@@ -14,16 +15,16 @@ public class Roles {
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
-    private Usuario usuario;
+    private Users users;
 
     public Roles() {
 
     }
 
-    public Roles(int idRoles, String rol, Usuario usuario) {
+    public Roles(int idRoles, String rol, Users users) {
         this.idRoles = idRoles;
         this.rol = rol;
-        this.usuario = usuario;
+        this.users = users;
     }
 
     public int getIdRoles() {
@@ -42,11 +43,11 @@ public class Roles {
         this.rol = rol;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

@@ -8,6 +8,8 @@ public class UsuarioDTO {
     private String email;
     private long telefono;
 
+    private Boolean enabled;
+
     public int getIdUser() {
         return idUser;
     }
@@ -54,5 +56,13 @@ public class UsuarioDTO {
 
     public void setTelefono(long telefono) {
         this.telefono = telefono;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 }

@@ -15,7 +15,7 @@ public class Usuarios_XEventos {
 
     @ManyToOne
     @JoinColumn(name = "id_Usuario")
-    private Usuario usuario;
+    private Users users;
 
     @Column(name = "descripcion", length = 250)
     private String descripcion;
@@ -24,10 +24,10 @@ public class Usuarios_XEventos {
     public Usuarios_XEventos() {
     }
 
-    public Usuarios_XEventos(int idUsuXEve, Eventos eventos, Usuario usuario, String descripcion) {
+    public Usuarios_XEventos(int idUsuXEve, Eventos eventos, Users users, String descripcion) {
         this.idUsuXEve = idUsuXEve;
         this.eventos = eventos;
-        this.usuario = usuario;
+        this.users = users;
         this.descripcion = descripcion;
     }
 
@@ -47,12 +47,12 @@ public class Usuarios_XEventos {
         this.eventos = eventos;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     public String getDescripcion() {

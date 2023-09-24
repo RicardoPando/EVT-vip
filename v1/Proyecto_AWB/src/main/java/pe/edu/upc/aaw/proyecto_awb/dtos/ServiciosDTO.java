@@ -5,6 +5,7 @@ public class ServiciosDTO {
     private String nombre;
     private String descripcion;
     private double costo;
+    private String Estado;
 
     public int getIdSerDisp() {
         return idSerDisp;
@@ -36,5 +37,13 @@ public class ServiciosDTO {
 
     public void setCosto(double costo) {
         this.costo = costo;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String estado) {
+        Estado = estado;
     }
 }

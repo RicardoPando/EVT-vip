@@ -22,6 +22,8 @@ public class ComprobantePagoDTO {
 
     private TipoComprobante tipoComprobante;
 
+    private int IGV;
+
     public int getId() {
         return id;
     }
@@ -76,5 +78,13 @@ public class ComprobantePagoDTO {
 
     public void setTipoComprobante(TipoComprobante tipoComprobante) {
         this.tipoComprobante = tipoComprobante;
+    }
+
+    public int getIGV() {
+        return IGV;
+    }
+
+    public void setIGV(int IGV) {
+        this.IGV = IGV;
     }
 }

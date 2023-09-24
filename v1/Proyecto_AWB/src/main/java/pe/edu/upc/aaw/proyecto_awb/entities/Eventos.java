@@ -36,12 +36,12 @@ public class Eventos {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private Users users;
 
     public Eventos() {
     }
 
-    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Locales locales, Usuario usuario) {
+    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Locales locales, Users users) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -50,7 +50,7 @@ public class Eventos {
         this.capacidad = capacidad;
         this.costo = costo;
         this.locales = locales;
-        this.usuario = usuario;
+        this.users = users;
     }
 
     public int getId() {
@@ -125,11 +125,11 @@ public class Eventos {
         this.locales = locales;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }
