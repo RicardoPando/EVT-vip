@@ -1,6 +1,5 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Asistentes;
 import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
 import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 
@@ -18,8 +17,6 @@ public class ComprobantePagoDTO {
     private String metodo;
 
     private String RUC;
-
-    private Asistentes asistentes;
 
     private Detalle detalle;
 
@@ -64,15 +61,7 @@ public class ComprobantePagoDTO {
     public void setRUC(String RUC) {
         this.RUC = RUC;
     }
-
-    public Asistentes getAsistentes() {
-        return asistentes;
-    }
-
-    public void setAsistentes(Asistentes asistentes) {
-        this.asistentes = asistentes;
-    }
-
+    
     public Detalle getDetalle() {
         return detalle;
     }

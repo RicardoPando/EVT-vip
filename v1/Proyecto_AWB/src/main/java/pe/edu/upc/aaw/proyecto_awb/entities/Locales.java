@@ -18,19 +18,14 @@ public class Locales {
     @Column(name ="Capacidad", length = 250, nullable = false )
     private String Capacidad;
 
-    @ManyToOne
-    @JoinColumn(name = "DLocal_id")
-    private D_Local d_local;
-
     public Locales() {
     }
 
-    public Locales(int id, String nombre, String direccion, String capacidad, D_Local d_local) {
+    public Locales(int id, String nombre, String direccion, String capacidad) {
         this.id = id;
         Nombre = nombre;
         Direccion = direccion;
         Capacidad = capacidad;
-        this.d_local = d_local;
     }
 
     public int getId() {
@@ -65,11 +60,4 @@ public class Locales {
         Capacidad = capacidad;
     }
 
-    public D_Local getD_local() {
-        return d_local;
-    }
-
-    public void setD_local(D_Local d_local) {
-        this.d_local = d_local;
-    }
 }

@@ -15,7 +15,7 @@ public class Servicios_XLocales {
 
     @ManyToOne
     @JoinColumn(name = "servicios_id")
-    private Servicios serviciosdisponibles;
+    private Servicios servicios;
 
     @Column(name = "Descripcion", length = 250, nullable = false)
     private String Descripcion;
@@ -23,10 +23,10 @@ public class Servicios_XLocales {
     public Servicios_XLocales() {
     }
 
-    public Servicios_XLocales(int idSerxL, Locales locales, Servicios serviciosdisponibles, String descripcion) {
+    public Servicios_XLocales(int idSerxL, Locales locales, Servicios servicios, String descripcion) {
         this.idSerxL = idSerxL;
         this.locales = locales;
-        this.serviciosdisponibles = serviciosdisponibles;
+        this.servicios = servicios;
         Descripcion = descripcion;
     }
 
@@ -47,11 +47,11 @@ public class Servicios_XLocales {
     }
 
     public Servicios getServiciosdisponibles() {
-        return serviciosdisponibles;
+        return servicios;
     }
 
-    public void setServiciosdisponibles(Servicios serviciosdisponibles) {
-        this.serviciosdisponibles = serviciosdisponibles;
+    public void setServicios(Servicios servicios) {
+        this.servicios = servicios;
     }
 
     public String getDescripcion() {

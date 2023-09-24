@@ -31,17 +31,17 @@ public class Eventos {
     private BigDecimal costo;
 
     @ManyToOne
-    @JoinColumn(name = "organizador_id")
-    private Organizador organizador;
-
-    @ManyToOne
     @JoinColumn(name = "lugares_id")
     private Locales locales;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     public Eventos() {
     }
 
-    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Organizador organizador, Locales locales) {
+    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Locales locales, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -49,8 +49,8 @@ public class Eventos {
         this.hora = hora;
         this.capacidad = capacidad;
         this.costo = costo;
-        this.organizador = organizador;
         this.locales = locales;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -109,19 +109,27 @@ public class Eventos {
         this.costo = costo;
     }
 
-    public Organizador getOrganizador() {
-        return organizador;
-    }
-
-    public void setOrganizador(Organizador organizador) {
-        this.organizador = organizador;
-    }
-
     public Locales getLugares() {
         return locales;
     }
 
     public void setLugares(Locales locales) {
         this.locales = locales;
+    }
+
+    public Locales getLocales() {
+        return locales;
+    }
+
+    public void setLocales(Locales locales) {
+        this.locales = locales;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

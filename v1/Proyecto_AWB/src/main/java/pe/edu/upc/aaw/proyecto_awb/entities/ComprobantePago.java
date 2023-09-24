@@ -25,30 +25,30 @@ public class ComprobantePago {
     private String RUC;
 
     @ManyToOne
-    @JoinColumn(name = "asistentes_id")
-    private Asistentes asistentes;
-
-    @ManyToOne
     @JoinColumn(name = "detalle_id")
     private Detalle detalle;
 
     @ManyToOne
-    @JoinColumn(name = "Tipo_Documento_id")
+    @JoinColumn(name = "Tipo_Comprobante_id")
     private TipoComprobante tipoComprobante;
+
+    @Column(name = "IGV")
+    private int IGV;
+
 
 
     public ComprobantePago() {
     }
 
-    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, Asistentes asistentes, Detalle detalle, TipoComprobante tipoComprobante) {
+    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, Detalle detalle, TipoComprobante tipoComprobante, int IGV) {
         this.id = id;
         this.monto = monto;
         this.fecha = fecha;
         this.metodo = metodo;
         this.RUC = RUC;
-        this.asistentes = asistentes;
         this.detalle = detalle;
         this.tipoComprobante = tipoComprobante;
+        this.IGV = IGV;
     }
 
     public int getId() {
@@ -91,14 +91,6 @@ public class ComprobantePago {
         this.RUC = RUC;
     }
 
-    public Asistentes getAsistentes() {
-        return asistentes;
-    }
-
-    public void setAsistentes(Asistentes asistentes) {
-        this.asistentes = asistentes;
-    }
-
     public Detalle getDetalle() {
         return detalle;
     }
@@ -107,11 +99,19 @@ public class ComprobantePago {
         this.detalle = detalle;
     }
 
-    public TipoComprobante getTipo_comprobante() {
+    public TipoComprobante getTipoComprobante() {
         return tipoComprobante;
     }
 
-    public void setTipo_comprobante(TipoComprobante tipoComprobante) {
+    public void setTipoComprobante(TipoComprobante tipoComprobante) {
         this.tipoComprobante = tipoComprobante;
+    }
+
+    public int getIGV() {
+        return IGV;
+    }
+
+    public void setIGV(int IGV) {
+        this.IGV = IGV;
     }
 }
