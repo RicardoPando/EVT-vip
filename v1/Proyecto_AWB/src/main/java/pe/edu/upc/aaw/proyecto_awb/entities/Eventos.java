@@ -15,7 +15,7 @@ public class Eventos {
     @Column(name = "nombre", length = 100, nullable = false)
     private String nombre;
 
-    @Column(name = "descripcion", length = 255)
+    @Column(name = "descripcion", length=250, nullable = false)
     private String descripcion;
 
     @Column(name = "fecha", nullable = false)
@@ -31,17 +31,17 @@ public class Eventos {
     private BigDecimal costo;
 
     @ManyToOne
-    @JoinColumn(name = "organizador_id")
-    private Organizador organizador;
+    @JoinColumn(name = "lugares_id")
+    private Locales locales;
 
     @ManyToOne
-    @JoinColumn(name = "lugares_id")
-    private Lugares lugares;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     public Eventos() {
     }
 
-    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Organizador organizador, Lugares lugares) {
+    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Locales locales, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -49,8 +49,8 @@ public class Eventos {
         this.hora = hora;
         this.capacidad = capacidad;
         this.costo = costo;
-        this.organizador = organizador;
-        this.lugares = lugares;
+        this.locales = locales;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -109,19 +109,19 @@ public class Eventos {
         this.costo = costo;
     }
 
-    public Organizador getOrganizador() {
-        return organizador;
+    public Locales getLocales() {
+        return locales;
     }
 
-    public void setOrganizador(Organizador organizador) {
-        this.organizador = organizador;
+    public void setLocales(Locales locales) {
+        this.locales = locales;
     }
 
-    public Lugares getLugares() {
-        return lugares;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setLugares(Lugares lugares) {
-        this.lugares = lugares;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

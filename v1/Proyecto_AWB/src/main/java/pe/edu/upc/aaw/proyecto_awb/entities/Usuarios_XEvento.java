@@ -17,7 +17,7 @@ public class Usuarios_XEvento {
     @JoinColumn(name = "eventos_id")
     private Eventos eventos;
 
-    @Column(name = "descripcion", length=400, nullable = false)
+    @Column(name = "descripcion", length=250, nullable = false)
     private String descripcion;
 
     public Usuarios_XEvento() {

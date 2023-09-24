@@ -1,12 +1,12 @@
 package pe.edu.upc.aaw.proyecto_awb.serviceinterfaces;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Lugares;
+import pe.edu.upc.aaw.proyecto_awb.entities.Locales;
 
 import java.util.List;
 
 public interface ILugaresService {
-    public void insertar(Lugares s);
-    List<Lugares> list();
+    public void insertar(Locales s);
+    List<Locales> list();
     public void delete(int id);
-    public Lugares listID(int id);
+    public Locales listID(int id);
 }

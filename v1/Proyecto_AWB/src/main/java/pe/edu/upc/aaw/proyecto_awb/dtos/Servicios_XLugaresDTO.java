@@ -1,11 +1,11 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Lugares;
+import pe.edu.upc.aaw.proyecto_awb.entities.Locales;
 import pe.edu.upc.aaw.proyecto_awb.entities.ServiciosDisponibles;
 
 public class Servicios_XLugaresDTO {
     private int idSerxL;
-    private Lugares lugares;
+    private Locales lugares;
     private ServiciosDisponibles serviciosdisponibles;
     private String Descripcion;
 
@@ -17,11 +17,11 @@ public class Servicios_XLugaresDTO {
         this.idSerxL = idSerxL;
     }
 
-    public Lugares getLugares() {
+    public Locales getLugares() {
         return lugares;
     }
 
-    public void setLugares(Lugares lugares) {
+    public void setLugares(Locales lugares) {
         this.lugares = lugares;
     }
 

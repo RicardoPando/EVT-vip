@@ -4,9 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.LugaresDTO;
-import pe.edu.upc.aaw.proyecto_awb.dtos.UsuarioDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Lugares;
-import pe.edu.upc.aaw.proyecto_awb.entities.Usuario;
+import pe.edu.upc.aaw.proyecto_awb.entities.Locales;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.ILugaresService;
 
 import java.util.List;
@@ -21,7 +19,7 @@ public class LugaresController {
     @PostMapping
     public void registrar(@RequestBody LugaresDTO dto){
         ModelMapper m= new ModelMapper();
-        Lugares l = m.map(dto, Lugares.class);
+        Locales l = m.map(dto, Locales.class);
         ils.insertar(l);
     }
     @GetMapping
@@ -49,7 +47,7 @@ public class LugaresController {
     @PutMapping
     public void Modificar (@RequestBody LugaresDTO dto){
         ModelMapper m= new ModelMapper();
-        Lugares u = m.map(dto,Lugares.class);
+        Locales u = m.map(dto, Locales.class);
         ils.insertar(u);
     }
 }

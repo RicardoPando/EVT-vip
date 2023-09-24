@@ -1,11 +1,8 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Lugares;
+import pe.edu.upc.aaw.proyecto_awb.entities.Locales;
 import pe.edu.upc.aaw.proyecto_awb.entities.Organizador;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -19,7 +16,7 @@ public class EventosDTO {
     private int capacidad;
     private BigDecimal costo;
     private Organizador organizador;
-    private Lugares lugares;
+    private Locales lugares;
 
     public int getId() {
         return id;
@@ -85,11 +82,11 @@ public class EventosDTO {
         this.organizador = organizador;
     }
 
-    public Lugares getLugares() {
+    public Locales getLugares() {
         return lugares;
     }
 
-    public void setLugares(Lugares lugares) {
+    public void setLugares(Locales lugares) {
         this.lugares = lugares;
     }
 }
