@@ -3,7 +3,7 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Lugares")
+@Table(name="Locales")
 public class Locales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

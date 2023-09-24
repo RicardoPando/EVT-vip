@@ -3,11 +3,11 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ServiciosDisponibles")
-public class ServiciosDisponibles {
+@Table(name = "Servicios")
+public class Servicios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSerDisp;
+    private int idServicios;
 
     @Column(name ="Nombre", length = 250, nullable = false )
     private String nombre;
@@ -18,22 +18,26 @@ public class ServiciosDisponibles {
     @Column(name = "costo",nullable = false,scale = 2)
     private double costo;
 
-    public ServiciosDisponibles() {
+    @Column(name ="estado", length = 50, nullable = false )
+    private String estado;
+
+    public Servicios() {
     }
 
-    public ServiciosDisponibles(int idSerDisp, String nombre, String descripcion, double costo) {
-        this.idSerDisp = idSerDisp;
+    public Servicios(int idServicios, String nombre, String descripcion, double costo, String estado) {
+        this.idServicios = idServicios;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;
+        this.estado = estado;
     }
 
-    public int getIdSerDisp() {
-        return idSerDisp;
+    public int getIdServicios() {
+        return idServicios;
     }
 
-    public void setIdSerDisp(int idSerDisp) {
-        this.idSerDisp = idSerDisp;
+    public void setIdServicios(int idServicios) {
+        this.idServicios = idServicios;
     }
 
     public String getNombre() {
@@ -58,5 +62,13 @@ public class ServiciosDisponibles {
 
     public void setCosto(double costo) {
         this.costo = costo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.ServiciosDisponiblesDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.ServiciosDisponibles;
+import pe.edu.upc.aaw.proyecto_awb.entities.Servicios;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IServiciosDispoblesService;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class ServiciosDisponiblesController {
     @PostMapping
     public void registrar (@RequestBody ServiciosDisponiblesDTO dto){
         ModelMapper m = new ModelMapper();
-        ServiciosDisponibles n = m.map(dto,ServiciosDisponibles.class);
+        Servicios n = m.map(dto, Servicios.class);
         sdS.insert(n);
     }
 
@@ -40,7 +40,7 @@ public class ServiciosDisponiblesController {
     public void modificar(@RequestBody ServiciosDisponiblesDTO dto)
     {
         ModelMapper m = new ModelMapper();
-        ServiciosDisponibles n = m.map(dto,ServiciosDisponibles.class);
+        Servicios n = m.map(dto, Servicios.class);
         sdS.insert(n);
     }
 }

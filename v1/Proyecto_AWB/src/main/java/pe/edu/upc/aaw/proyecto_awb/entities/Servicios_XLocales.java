@@ -3,8 +3,8 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Servicios_XLugares")
-public class Servicios_XLugares {
+@Table(name = "Servicios_XLocales")
+public class Servicios_XLocales {
     @Id // PK-FK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSerxL;
@@ -12,21 +12,29 @@ public class Servicios_XLugares {
     @JoinColumn(name = "lugares_id")
     private Locales lugares;
 
-
     @ManyToOne
-    @JoinColumn(name = "serviciosDisponibles_id")
-    private ServiciosDisponibles serviciosdisponibles;
+    @JoinColumn(name = "servicios_id")
+    private Servicios servicios;
 
     @Column(name = "Descripcion", length = 250, nullable = false)
     private String Descripcion;
 
-    public Servicios_XLugares() {
+    public Servicios_XLocales() {
     }
 
-    public Servicios_XLugares(Locales lugares, ServiciosDisponibles serviciosdisponibles, String descripcion) {
+    public Servicios_XLocales(int idSerxL, Locales lugares, Servicios servicios, String descripcion) {
+        this.idSerxL = idSerxL;
         this.lugares = lugares;
-        this.serviciosdisponibles = serviciosdisponibles;
+        this.servicios = servicios;
         Descripcion = descripcion;
+    }
+
+    public int getIdSerxL() {
+        return idSerxL;
+    }
+
+    public void setIdSerxL(int idSerxL) {
+        this.idSerxL = idSerxL;
     }
 
     public Locales getLugares() {
@@ -37,12 +45,12 @@ public class Servicios_XLugares {
         this.lugares = lugares;
     }
 
-    public ServiciosDisponibles getServiciosdisponibles() {
-        return serviciosdisponibles;
+    public Servicios getServicios() {
+        return servicios;
     }
 
-    public void setServiciosdisponibles(ServiciosDisponibles serviciosdisponibles) {
-        this.serviciosdisponibles = serviciosdisponibles;
+    public void setServicios(Servicios servicios) {
+        this.servicios = servicios;
     }
 
     public String getDescripcion() {

@@ -3,7 +3,7 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Asistentes_XEvento")
+@Table(name = "Usuarios_XEventos")
 public class Usuarios_XEventos {
     @Id // PK-FK
     @GeneratedValue(strategy = GenerationType.IDENTITY)

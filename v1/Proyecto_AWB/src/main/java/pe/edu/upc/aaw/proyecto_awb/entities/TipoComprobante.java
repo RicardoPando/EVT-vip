@@ -3,7 +3,7 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Tipo_Documento")
+@Table(name = "TipoComprobante")
 public class TipoComprobante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

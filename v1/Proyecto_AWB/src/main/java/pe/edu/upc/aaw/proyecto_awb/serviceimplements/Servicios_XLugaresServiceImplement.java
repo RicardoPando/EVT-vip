@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.proyecto_awb.entities.Servicios_XLugares;
+import pe.edu.upc.aaw.proyecto_awb.entities.Servicios_XLocales;
 import pe.edu.upc.aaw.proyecto_awb.repositories.IServicios_XLugaresRepository;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IServicios_XLugaresService;
 
@@ -13,12 +13,12 @@ public class Servicios_XLugaresServiceImplement implements IServicios_XLugaresSe
     private IServicios_XLugaresRepository slR;
 
     @Override
-    public void insertar(Servicios_XLugares s) {
+    public void insertar(Servicios_XLocales s) {
         slR.save(s);
     }
 
     @Override
-    public List<Servicios_XLugares> list() {
+    public List<Servicios_XLocales> list() {
         return slR.findAll();
     }
 
@@ -28,7 +28,7 @@ public class Servicios_XLugaresServiceImplement implements IServicios_XLugaresSe
     }
 
     @Override
-    public Servicios_XLugares listID(int id) {
-        return slR.findById(id).orElse(new Servicios_XLugares());
+    public Servicios_XLocales listID(int id) {
+        return slR.findById(id).orElse(new Servicios_XLocales());
     }
 }

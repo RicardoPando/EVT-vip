@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.Servicios_XLugaresDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Servicios_XLugares;
+import pe.edu.upc.aaw.proyecto_awb.entities.Servicios_XLocales;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IServicios_XLugaresService;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class Servicios_XLugaresController {
     public void registrar(@RequestBody Servicios_XLugaresDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Servicios_XLugares s = m.map(dto,Servicios_XLugares.class);
+        Servicios_XLocales s = m.map(dto, Servicios_XLocales.class);
         slS.insertar(s);
     }
 
@@ -48,7 +48,7 @@ public class Servicios_XLugaresController {
     public void modificar(@RequestBody Servicios_XLugaresDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Servicios_XLugares s = m.map(dto,Servicios_XLugares.class);
+        Servicios_XLocales s = m.map(dto, Servicios_XLocales.class);
         slS.insertar(s);
     }
 }
