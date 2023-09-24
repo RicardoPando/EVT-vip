@@ -7,32 +7,36 @@ import javax.persistence.*;
 public class Usuarios_XEvento {
     @Id // PK-FK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAsisXEve;
+    private int idUsuXEve;
 
     @ManyToOne
     @JoinColumn(name = "asistentes_id")
-    private Asistentes asistentes;
-
-
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "eventos_id")
     private Eventos eventos;
 
+    @Column(name = "descripcion", length=400, nullable = false)
+    private String descripcion;
+
     public Usuarios_XEvento() {
     }
 
-    public Usuarios_XEvento(Asistentes asistentes, Eventos eventos) {
-        this.asistentes = asistentes;
-        this.eventos = eventos;
+    public int getIdUsuXEve() {
+        return idUsuXEve;
     }
 
-    public Asistentes getAsistentes() {
-        return asistentes;
+    public void setIdUsuXEve(int idUsuXEve) {
+        this.idUsuXEve = idUsuXEve;
     }
 
-    public void setAsistentes(Asistentes asistentes) {
-        this.asistentes = asistentes;
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Eventos getEventos() {
@@ -41,5 +45,13 @@ public class Usuarios_XEvento {
 
     public void setEventos(Eventos eventos) {
         this.eventos = eventos;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
