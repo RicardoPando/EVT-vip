@@ -3,8 +3,8 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ServiciosDisponibles")
-public class ServiciosDisponibles {
+@Table(name = "Servicios")
+public class Servicios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSerDisp;
@@ -18,10 +18,10 @@ public class ServiciosDisponibles {
     @Column(name = "costo",nullable = false,scale = 2)
     private double costo;
 
-    public ServiciosDisponibles() {
+    public Servicios() {
     }
 
-    public ServiciosDisponibles(int idSerDisp, String nombre, String descripcion, double costo) {
+    public Servicios(int idSerDisp, String nombre, String descripcion, double costo) {
         this.idSerDisp = idSerDisp;
         this.nombre = nombre;
         this.descripcion = descripcion;

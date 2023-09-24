@@ -36,12 +36,12 @@ public class Eventos {
 
     @ManyToOne
     @JoinColumn(name = "lugares_id")
-    private Lugares lugares;
+    private Locales locales;
 
     public Eventos() {
     }
 
-    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Organizador organizador, Lugares lugares) {
+    public Eventos(int id, String nombre, String descripcion, LocalDate fecha, LocalTime hora, int capacidad, BigDecimal costo, Organizador organizador, Locales locales) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -50,7 +50,7 @@ public class Eventos {
         this.capacidad = capacidad;
         this.costo = costo;
         this.organizador = organizador;
-        this.lugares = lugares;
+        this.locales = locales;
     }
 
     public int getId() {
@@ -117,11 +117,11 @@ public class Eventos {
         this.organizador = organizador;
     }
 
-    public Lugares getLugares() {
-        return lugares;
+    public Locales getLugares() {
+        return locales;
     }
 
-    public void setLugares(Lugares lugares) {
-        this.lugares = lugares;
+    public void setLugares(Locales locales) {
+        this.locales = locales;
     }
 }

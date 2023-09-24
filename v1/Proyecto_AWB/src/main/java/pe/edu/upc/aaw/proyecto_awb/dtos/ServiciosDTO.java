@@ -1,6 +1,6 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-public class ServiciosDisponiblesDTO {
+public class ServiciosDTO {
     private int idSerDisp;
     private String nombre;
     private String descripcion;

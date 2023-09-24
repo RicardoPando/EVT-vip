@@ -3,31 +3,31 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.proyecto_awb.dtos.ServiciosDisponiblesDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.ServiciosDisponibles;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IServiciosDispoblesService;
+import pe.edu.upc.aaw.proyecto_awb.dtos.ServiciosDTO;
+import pe.edu.upc.aaw.proyecto_awb.entities.Servicios;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IServiciosService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("Servicios Disponibles")
-public class ServiciosDisponiblesController {
+public class ServiciosController {
     @Autowired
-    private IServiciosDispoblesService sdS;
+    private IServiciosService sdS;
 
     @PostMapping
-    public void registrar (@RequestBody ServiciosDisponiblesDTO dto){
+    public void registrar (@RequestBody ServiciosDTO dto){
         ModelMapper m = new ModelMapper();
-        ServiciosDisponibles n = m.map(dto,ServiciosDisponibles.class);
+        Servicios n = m.map(dto,Servicios.class);
         sdS.insert(n);
     }
 
     @GetMapping
-    public List<ServiciosDisponiblesDTO> listar(){
+    public List<ServiciosDTO> listar(){
         return sdS.list().stream().map((x->{
             ModelMapper m = new ModelMapper();
-            return m.map(x,ServiciosDisponiblesDTO.class);
+            return m.map(x,ServiciosDTO.class);
         })).collect(Collectors.toList());
     }
 
@@ -37,10 +37,10 @@ public class ServiciosDisponiblesController {
     }
 
     @PutMapping
-    public void modificar(@RequestBody ServiciosDisponiblesDTO dto)
+    public void modificar(@RequestBody ServiciosDTO dto)
     {
         ModelMapper m = new ModelMapper();
-        ServiciosDisponibles n = m.map(dto,ServiciosDisponibles.class);
+        Servicios n = m.map(dto,Servicios.class);
         sdS.insert(n);
     }
 }

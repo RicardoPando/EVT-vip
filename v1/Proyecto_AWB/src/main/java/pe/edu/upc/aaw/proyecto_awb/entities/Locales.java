@@ -3,8 +3,8 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Lugares")
-public class Lugares {
+@Table(name="Locales")
+public class Locales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,10 +22,10 @@ public class Lugares {
     @JoinColumn(name = "DLocal_id")
     private D_Local d_local;
 
-    public Lugares() {
+    public Locales() {
     }
 
-    public Lugares(int id, String nombre, String direccion, String capacidad, D_Local d_local) {
+    public Locales(int id, String nombre, String direccion, String capacidad, D_Local d_local) {
         this.id = id;
         Nombre = nombre;
         Direccion = direccion;

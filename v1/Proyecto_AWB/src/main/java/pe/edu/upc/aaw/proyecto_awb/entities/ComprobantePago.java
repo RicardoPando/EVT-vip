@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Documento_Venta")
-public class Documento_Venta {
+@Table(name = "ComprobantePago")
+public class ComprobantePago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -34,13 +34,13 @@ public class Documento_Venta {
 
     @ManyToOne
     @JoinColumn(name = "Tipo_Documento_id")
-    private Tipo_Documento tipo_documento;
+    private TipoComprobante tipoComprobante;
 
 
-    public Documento_Venta() {
+    public ComprobantePago() {
     }
 
-    public Documento_Venta(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, Asistentes asistentes, Detalle detalle, Tipo_Documento tipo_documento) {
+    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, Asistentes asistentes, Detalle detalle, TipoComprobante tipoComprobante) {
         this.id = id;
         this.monto = monto;
         this.fecha = fecha;
@@ -48,7 +48,7 @@ public class Documento_Venta {
         this.RUC = RUC;
         this.asistentes = asistentes;
         this.detalle = detalle;
-        this.tipo_documento = tipo_documento;
+        this.tipoComprobante = tipoComprobante;
     }
 
     public int getId() {
@@ -107,11 +107,11 @@ public class Documento_Venta {
         this.detalle = detalle;
     }
 
-    public Tipo_Documento getTipo_documento() {
-        return tipo_documento;
+    public TipoComprobante getTipo_comprobante() {
+        return tipoComprobante;
     }
 
-    public void setTipo_documento(Tipo_Documento tipo_documento) {
-        this.tipo_documento = tipo_documento;
+    public void setTipo_comprobante(TipoComprobante tipoComprobante) {
+        this.tipoComprobante = tipoComprobante;
     }
 }

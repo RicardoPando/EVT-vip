@@ -1,6 +1,6 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-public class Tipo_DocumentoDTO {
+public class TipoComprobanteDTO {
     private int id;
     private String Descripcion;
 

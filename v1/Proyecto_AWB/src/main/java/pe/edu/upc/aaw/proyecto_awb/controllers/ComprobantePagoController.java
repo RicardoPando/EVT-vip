@@ -3,31 +3,31 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.proyecto_awb.dtos.Documento_VentaDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Documento_Venta;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDocumento_VentaService;
+import pe.edu.upc.aaw.proyecto_awb.dtos.ComprobantePagoDTO;
+import pe.edu.upc.aaw.proyecto_awb.entities.ComprobantePago;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComprobantePagoService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("Documento Venta")
-public class Documento_VentaController {
+@RequestMapping("ComprobantePago")
+public class ComprobantePagoController {
     @Autowired
-    private IDocumento_VentaService dvS;
+    private IComprobantePagoService dvS;
 
     @PostMapping
-    public void registrar (@RequestBody Documento_VentaDTO dto){
+    public void registrar (@RequestBody ComprobantePagoDTO dto){
         ModelMapper m = new ModelMapper();
-        Documento_Venta n = m.map(dto,Documento_Venta.class);
+        ComprobantePago n = m.map(dto,ComprobantePago.class);
         dvS.insertar(n);
     }
 
     @GetMapping
-    public List<Documento_VentaDTO> listar(){
+    public List<ComprobantePagoDTO> listar(){
         return dvS.list().stream().map((x->{
             ModelMapper m = new ModelMapper();
-            return m.map(x,Documento_VentaDTO.class);
+            return m.map(x,ComprobantePagoDTO.class);
         })).collect(Collectors.toList());
     }
 
@@ -37,10 +37,10 @@ public class Documento_VentaController {
     }
 
     @PutMapping
-    public void modificar(@RequestBody Documento_VentaDTO dto)
+    public void modificar(@RequestBody ComprobantePagoDTO dto)
     {
         ModelMapper m = new ModelMapper();
-        Documento_Venta n = m.map(dto,Documento_Venta.class);
+        ComprobantePago n = m.map(dto,ComprobantePago.class);
         dvS.insertar(n);
     }
 }

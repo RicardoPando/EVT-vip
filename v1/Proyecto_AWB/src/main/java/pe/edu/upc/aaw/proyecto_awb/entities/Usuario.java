@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.entities;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -21,16 +22,22 @@ public class Usuario {
     @Column(name = "Telefono", length = 9, nullable = false)
     private long telefono;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private List<Roles> roles;
+
     public Usuario() {
     }
 
-    public Usuario(int idUser, long dni, String nombre, String apellido, String email, long telefono) {
+
+    public Usuario(int idUser, long dni, String nombre, String apellido, String email, long telefono, List<Roles> roles) {
         this.idUser = idUser;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
+        this.roles = roles;
     }
 
     public int getIdUser() {
@@ -79,5 +86,13 @@ public class Usuario {
 
     public void setTelefono(long telefono) {
         this.telefono = telefono;
+    }
+
+    public List<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Roles> roles) {
+        this.roles = roles;
     }
 }
