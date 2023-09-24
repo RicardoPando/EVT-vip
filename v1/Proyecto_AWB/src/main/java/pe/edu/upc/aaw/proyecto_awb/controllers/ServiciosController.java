@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.ServiciosDTO;
 import pe.edu.upc.aaw.proyecto_awb.entities.Servicios;
@@ -32,6 +33,7 @@ public class ServiciosController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void eliminar(@PathVariable("id") Integer id){
         sdS.delete(id);
     }

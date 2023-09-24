@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.proyecto_awb.entities.Users;
@@ -24,6 +25,7 @@ public class UsuarioController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<UsuarioDTO> listar(){
         return uS.list().stream().map(x->{
             ModelMapper m =  new ModelMapper();
@@ -37,7 +39,9 @@ public class UsuarioController {
         uS.delete(id);
     }
 
+
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public UsuarioDTO listarID(@PathVariable ("id") Integer id)
     {
         ModelMapper m= new ModelMapper();
