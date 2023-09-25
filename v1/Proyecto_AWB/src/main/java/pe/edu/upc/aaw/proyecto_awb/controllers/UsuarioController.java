@@ -55,4 +55,11 @@ public class UsuarioController {
         Users u = m.map(dto,Users.class);
         uS.insert(u);
     }
+    @GetMapping("/comentByPerson")
+    @PreAuthorize("hasAuthority('ASISTENTE')")
+    public List<comentByPerson>  comentByPerson() {
+        List<String[]> lista = eR.comentByPerson();
+        List<comentByPerson> lista
+    }
+
 }

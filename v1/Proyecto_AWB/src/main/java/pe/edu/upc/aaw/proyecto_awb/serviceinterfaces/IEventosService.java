@@ -7,4 +7,5 @@ import java.util.List;
 public interface IEventosService {
     public void insertar(Eventos s);
     List<Eventos> list();
+    public List<String[]> comentByPerson();
 }

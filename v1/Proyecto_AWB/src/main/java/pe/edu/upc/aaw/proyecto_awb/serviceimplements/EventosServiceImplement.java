@@ -22,4 +22,9 @@ public class EventosServiceImplement implements IEventosService {
     public List<Eventos> list() {
         return null;
     }
+
+    @Override
+    public List<String[]> comentByPerson() {
+        return eR.comentByPerson();
+    }
 }
