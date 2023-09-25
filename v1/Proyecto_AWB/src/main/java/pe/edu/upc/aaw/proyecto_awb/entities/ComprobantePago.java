@@ -6,11 +6,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Documento_Venta")
+@Table(name = "ComprobantePago")
 public class ComprobantePago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idcomBanPAgo;
 
     @Column(name = "monto")
     private BigDecimal monto;
@@ -28,7 +28,7 @@ public class ComprobantePago {
 
     @ManyToOne
     @JoinColumn(name = "detalle_id")
-    private Detalles detalle;
+    private Detalle detalle;
 
     @ManyToOne
     @JoinColumn(name = "tipoComprobante_id")
@@ -37,8 +37,8 @@ public class ComprobantePago {
     public ComprobantePago() {
     }
 
-    public ComprobantePago(int id, BigDecimal monto, LocalDate fecha, String metodo, String RUC, BigDecimal igv, Detalles detalle, TipoComprobante tipoComprobante) {
-        this.id = id;
+    public ComprobantePago(int idcomBanPAgo, BigDecimal monto, LocalDate fecha, String metodo, String RUC, BigDecimal igv, Detalle detalle, TipoComprobante tipoComprobante) {
+        this.idcomBanPAgo = idcomBanPAgo;
         this.monto = monto;
         this.fecha = fecha;
         this.metodo = metodo;
@@ -48,12 +48,12 @@ public class ComprobantePago {
         this.tipoComprobante = tipoComprobante;
     }
 
-    public int getId() {
-        return id;
+    public int getIdcomBanPAgo() {
+        return idcomBanPAgo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdcomBanPAgo(int idcomBanPAgo) {
+        this.idcomBanPAgo = idcomBanPAgo;
     }
 
     public BigDecimal getMonto() {
@@ -96,11 +96,11 @@ public class ComprobantePago {
         this.igv = igv;
     }
 
-    public Detalles getDetalle() {
+    public Detalle getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(Detalles detalle) {
+    public void setDetalle(Detalle detalle) {
         this.detalle = detalle;
     }
 

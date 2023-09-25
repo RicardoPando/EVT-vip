@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.proyecto_awb.entities.Comentario;
 import pe.edu.upc.aaw.proyecto_awb.repositories.IComentarioRepository;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComentarioService;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComentariosService;
 
 import java.util.List;
 
 @Service
-public class ComentarioServiceImplement implements IComentarioService {
+public class ComentarioServiceImplement implements IComentariosService {
 
     @Autowired
     private IComentarioRepository cR;

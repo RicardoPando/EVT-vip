@@ -1,7 +1,7 @@
 package pe.edu.upc.aaw.proyecto_awb.serviceimplements;
 
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.proyecto_awb.entities.Detalles;
+import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
 import pe.edu.upc.aaw.proyecto_awb.repositories.IDetallesRepository;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDetallesService;
 
@@ -12,11 +12,11 @@ public class DetallesServiceImplement implements IDetallesService {
     private IDetallesRepository dR;
 
     @Override
-    public void insertar(Detalles s) {dR.save(s);
+    public void insertar(Detalle s) {dR.save(s);
     }
 
     @Override
-    public List<Detalles> list() {
+    public List<Detalle> list() {
         return dR.findAll();
     }
 
@@ -25,7 +25,7 @@ public class DetallesServiceImplement implements IDetallesService {
     }
 
     @Override
-    public Detalles listID(int id) { return dR.findById(id).orElse(new Detalles());
+    public Detalle listID(int id) { return dR.findById(id).orElse(new Detalle());
     }
 
 }

@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "Detalle")
-public class Detalles {
+public class Detalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -17,10 +17,10 @@ public class Detalles {
     @Column(name = "subTotal")
     private BigDecimal subTotal;
 
-    public Detalles() {
+    public Detalle() {
     }
 
-    public Detalles(int id, Eventos eventos, BigDecimal subTotal) {
+    public Detalle(int id, Eventos eventos, BigDecimal subTotal) {
         this.id = id;
         this.eventos = eventos;
         this.subTotal = subTotal;

@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.DetallesDTO;
-import pe.edu.upc.aaw.proyecto_awb.entities.Detalles;
+import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
 import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IDetallesService;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class DetallesController {
     public void registrar(@RequestBody DetallesDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Detalles d = m.map(dto, Detalles.class);
+        Detalle d = m.map(dto, Detalle.class);
         dT.insertar(d);
     }
 
@@ -48,7 +48,7 @@ public class DetallesController {
     public void modificar(@RequestBody DetallesDTO dto)
     {
         ModelMapper m= new ModelMapper();
-        Detalles d = m.map(dto, Detalles.class);
+        Detalle d = m.map(dto, Detalle.class);
         dT.insertar(d);
     }
 }

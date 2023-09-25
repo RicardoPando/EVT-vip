@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.Tipo_DocumentoDTO;
 import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.ITipo_DocumentoService;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.ITipoComprobanteService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/tipo documento")
 public class Tipo_DocumentoController {
     @Autowired
-    private ITipo_DocumentoService tdS;
+    private ITipoComprobanteService tdS;
 
     @PostMapping
     public void registrar(@RequestBody Tipo_DocumentoDTO dto){

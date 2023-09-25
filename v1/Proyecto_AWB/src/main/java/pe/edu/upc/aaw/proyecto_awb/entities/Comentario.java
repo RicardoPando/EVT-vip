@@ -7,64 +7,70 @@ import javax.persistence.*;
 public class Comentario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int comentarioId;
-    @Column(name = "usuarioId", length = 20, nullable = false)
-    private int usuarioId;
-    @Column(name = "eventosId", length = 20, nullable = false)
-    private int eventosId;
-    @Column(name = "valorancion", length = 20, nullable = false)
-    private int valorancion;
-    @Column(name = "contenido", length = 20, nullable = false)
-    private String contenido;
+    private int idComentario;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "eventos_id")
+    private Eventos eventos;
+
+    @Column(name = "Valoracion", length = 5, nullable = false)
+    private int Valoracion;
+
+    @Column(name = "Contenido", length = 250, nullable = false)
+    private String Contenido;
 
     public Comentario() {
     }
 
-    public Comentario(int comentarioId, int usuarioId, int eventosId, int valorancion, String contenido) {
-        this.comentarioId = comentarioId;
-        this.usuarioId = usuarioId;
-        this.eventosId = eventosId;
-        this.valorancion = valorancion;
-        this.contenido = contenido;
+    public Comentario(int idComentario, Usuario usuario, Eventos eventos, int valoracion, String contenido) {
+        this.idComentario = idComentario;
+        this.usuario = usuario;
+        this.eventos = eventos;
+        Valoracion = valoracion;
+        Contenido = contenido;
     }
 
-    public int getComentarioId() {
-        return comentarioId;
+    public int getIdComentario() {
+        return idComentario;
     }
 
-    public void setComentarioId(int comentarioId) {
-        this.comentarioId = comentarioId;
+    public void setIdComentario(int idComentario) {
+        this.idComentario = idComentario;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getEventosId() {
-        return eventosId;
+    public Eventos getEventos() {
+        return eventos;
     }
 
-    public void setEventosId(int eventosId) {
-        this.eventosId = eventosId;
+    public void setEventos(Eventos eventos) {
+        this.eventos = eventos;
     }
 
-    public int getValorancion() {
-        return valorancion;
+    public int getValoracion() {
+        return Valoracion;
     }
 
-    public void setValorancion(int valorancion) {
-        this.valorancion = valorancion;
+    public void setValoracion(int valoracion) {
+        Valoracion = valoracion;
     }
 
     public String getContenido() {
-        return contenido;
+        return Contenido;
     }
 
     public void setContenido(String contenido) {
-        this.contenido = contenido;
+        Contenido = contenido;
     }
 }

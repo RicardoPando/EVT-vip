@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.ComentarioDTO;
 import pe.edu.upc.aaw.proyecto_awb.entities.Comentario;
-import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComentarioService;
+import pe.edu.upc.aaw.proyecto_awb.serviceinterfaces.IComentariosService;
 
 @RestController
 @RequestMapping("/comentarios")
 public class ComentarioController {
 
     @Autowired
-    private IComentarioService cS;
+    private IComentariosService cS;
 
     @PostMapping
     private void registrar(@RequestBody ComentarioDTO dto) {

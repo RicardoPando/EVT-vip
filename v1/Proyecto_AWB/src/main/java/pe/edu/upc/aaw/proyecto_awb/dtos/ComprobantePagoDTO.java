@@ -1,15 +1,15 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
 import pe.edu.upc.aaw.proyecto_awb.entities.Asistentes;
-import pe.edu.upc.aaw.proyecto_awb.entities.Detalles;
+import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
 import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Documento_VentaDTO {
+public class ComprobantePagoDTO {
 
-    private int id;
+    private int idcomBanPAgo;
 
     private BigDecimal monto;
 
@@ -18,19 +18,18 @@ public class Documento_VentaDTO {
     private String metodo;
 
     private String RUC;
+    private BigDecimal igv;
 
-    private Asistentes asistentes;
+    private Detalle detalle;
 
-    private Detalles detalle;
+    private TipoComprobante tipoComprobante;
 
-    private TipoComprobante tipo_documento;
-
-    public int getId() {
-        return id;
+    public int getIdcomBanPAgo() {
+        return idcomBanPAgo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdcomBanPAgo(int idcomBanPAgo) {
+        this.idcomBanPAgo = idcomBanPAgo;
     }
 
     public BigDecimal getMonto() {
@@ -65,27 +64,27 @@ public class Documento_VentaDTO {
         this.RUC = RUC;
     }
 
-    public Asistentes getAsistentes() {
-        return asistentes;
+    public BigDecimal getIgv() {
+        return igv;
     }
 
-    public void setAsistentes(Asistentes asistentes) {
-        this.asistentes = asistentes;
+    public void setIgv(BigDecimal igv) {
+        this.igv = igv;
     }
 
-    public Detalles getDetalle() {
+    public Detalle getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(Detalles detalle) {
+    public void setDetalle(Detalle detalle) {
         this.detalle = detalle;
     }
 
-    public TipoComprobante getTipo_documento() {
-        return tipo_documento;
+    public TipoComprobante getTipoComprobante() {
+        return tipoComprobante;
     }
 
-    public void setTipo_documento(TipoComprobante tipo_documento) {
-        this.tipo_documento = tipo_documento;
+    public void setTipoComprobante(TipoComprobante tipoComprobante) {
+        this.tipoComprobante = tipoComprobante;
     }
 }

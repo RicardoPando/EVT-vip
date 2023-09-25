@@ -23,6 +23,13 @@ public class Usuarios_XEventos {
     public Usuarios_XEventos() {
     }
 
+    public Usuarios_XEventos(int idUsuXEve, Usuario usuario, Eventos eventos, String descripcion) {
+        this.idUsuXEve = idUsuXEve;
+        this.usuario = usuario;
+        this.eventos = eventos;
+        this.descripcion = descripcion;
+    }
+
     public int getIdUsuXEve() {
         return idUsuXEve;
     }

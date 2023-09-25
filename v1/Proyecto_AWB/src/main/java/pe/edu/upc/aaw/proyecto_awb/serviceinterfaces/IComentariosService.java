@@ -4,7 +4,7 @@ import pe.edu.upc.aaw.proyecto_awb.entities.Comentario;
 
 import java.util.List;
 
-public interface IComentarioService {
+public interface IComentariosService {
 
     public void insert(Comentario comentario);
     public List<Comentario> list();

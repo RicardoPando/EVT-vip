@@ -1,50 +1,53 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
+import pe.edu.upc.aaw.proyecto_awb.entities.Eventos;
+import pe.edu.upc.aaw.proyecto_awb.entities.Usuario;
+
 public class ComentarioDTO {
 
-    private int comentarioId;
-    private int usuarioId;
-    private int eventosId;
-    private int valorancion;
-    private String contenido;
+    private int idComentario;
+    private Usuario usuario;
+    private Eventos eventos;
+    private int Valoracion;
+    private String Contenido;
 
-    public int getComentarioId() {
-        return comentarioId;
+    public int getIdComentario() {
+        return idComentario;
     }
 
-    public void setComentarioId(int comentarioId) {
-        this.comentarioId = comentarioId;
+    public void setIdComentario(int idComentario) {
+        this.idComentario = idComentario;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getEventosId() {
-        return eventosId;
+    public Eventos getEventos() {
+        return eventos;
     }
 
-    public void setEventosId(int eventosId) {
-        this.eventosId = eventosId;
+    public void setEventos(Eventos eventos) {
+        this.eventos = eventos;
     }
 
-    public int getValorancion() {
-        return valorancion;
+    public int getValoracion() {
+        return Valoracion;
     }
 
-    public void setValorancion(int valorancion) {
-        this.valorancion = valorancion;
+    public void setValoracion(int valoracion) {
+        Valoracion = valoracion;
     }
 
     public String getContenido() {
-        return contenido;
+        return Contenido;
     }
 
     public void setContenido(String contenido) {
-        this.contenido = contenido;
+        Contenido = contenido;
     }
 }
